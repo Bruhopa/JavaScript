@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <style>
+    body {
+        background-color: rgb(34, 43, 51);
+        text-align: center;
+        height: 200px;  
+        width: 90%;
+    }
+    h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 70px;
+    }
+    label {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 25px;
+        box-shadow: 5px;
+    }
+    p {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 30px;
+        box-shadow: 5px;
+    }
+    input {
+        font-size: 20px;
+        box-shadow: 5px;
+    }
+    
+    </style>
+    <script lang="JavaScript">
+        let viagem;
+        let km = 0;
+        let litros = 0;
+        let preco = 0;
+
+        function calcular(){
+            viagem = document.querySelector("#viagem").value;
+            km = document.querySelector("#km").value;
+            litros = document.querySelector("#litros").value;
+            preco = document.querySelector("#preco").value;
+
+            document.querySelector("#calculo").innerHTML = ("A viagem foi para " + viagem + "<br> Foi percorrido "+ km +" Km <br> Cada litro rendeu "+(km/litros)+"<br> Foi gasto um total de R$"+ (litros*preco));
+        }
+    </script>
+</head>
+<body>
+    <h2>Calculadora de Viagem</h2>
+
+    <label>Local</label>
+    <input type="text" onchange="calcular()" id="viagem"><br>
+    <label>Km percorridos</label>
+    <input type="text" onchange="calcular()" id="km"><br>
+    <label>Litros de combustível</label>
+    <input type="text" onchange="calcular()" id="litros"><br>
+    <label>Preço do litro</label>
+    <input type="text" onchange="calcular()" id="preco"><br>
+
+    <p id="calculo">...</p>
+</body>
+</html>

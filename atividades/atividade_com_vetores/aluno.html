@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar alunos</title>
+    <script language="JavaScript">
+        function ordenar(){
+            const text = document.querySelector("#alunos").value;
+            let alunos = text.split(",");
+
+            alunos.sort();
+
+            for(n=0;n<=alunos.length-1;n++){ 
+                alunos[n]="\n"+alunos[n];
+            }
+
+            document.querySelector("#alunos").value = "Lista ordenada: "+alunos+"\n\nQuantidade de alunos: "+alunos.length;
+        }
+
+        function QuanAluno(){
+
+        var QuanAlunos = prompt("Digite a quantidade de alunos:");  
+        QuanAlunos = parseInt(QuanAlunos);
+
+        if (!isNaN(QuanAlunos)) {
+  
+        alert("A quantidade de alunos é: " + QuanAlunos);
+        } else {
+        alert("Por favor, digite um valor numérico válido.");
+        }
+        }
+    </script>
+</head>
+<body>
+    <h2>Ordenar Aluno</h2>
+    <label>Informe os alunos</label>
+    <input type="text" onchange="alunos" id="ordenar">
+</body>
+</html>

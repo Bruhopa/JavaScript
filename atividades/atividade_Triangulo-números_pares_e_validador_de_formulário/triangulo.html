@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangulo, números pares e validador de formulário</title>
+    <script language="JavaScript">
+        ///------- triângulo --------///
+    function verTriangulo(){
+    const l1 = parseFloat(document.querySelector("#l1").value);
+    const l2 = parseFloat(document.querySelector("#l2").value);
+    const l3 = parseFloat(document.querySelector("#l3").value);
+
+    if(l1>l2 && l1>l3){
+    let maior = l1
+    if(maior<l2+l3){
+        document.querySelector("#verTriangulo").innerHTML = ("O triângulo é possível");
+    }else{
+        document.querySelector("#verTriangulo").innerHTML = ("O triângulo é impossível");
+    }
+    }else if(l2>l1 && l2>l3){
+        let maior = l2
+         if(maior<l1+l3){
+         document.querySelector("#verTriangulo").innerHTML = ("O triângulo é possível");
+         }else{
+        document.querySelector("#verTriangulo").innerHTML = ("O triângulo é impossível");
+     }
+        }else{
+    let maior = l3
+        if(maior<l2+l1){
+             document.querySelector("#verTriangulo").innerHTML = ("O triângulo é possível");
+    }else{
+        document.querySelector("#verTriangulo").innerHTML = ("O triângulo é impossível");
+        }
+     }
+}
+    </script>
+</head>
+<body>
+    <h2>Triângulo</h2>
+    <label>Primeiro lado</label>
+    <input type="number" onchange="verTriangulo()" id="l1"><br>
+    <label>Segundo lado</label>
+    <input type="number" onchange="verTriangulo()" id="l2"><br>
+    <label>Terceiro lado</label>
+    <input type="number" onchange="verTriangulo()" id="l3"><br>
+    <p id="verTriangulo">...</p>
+</body>
+</html>

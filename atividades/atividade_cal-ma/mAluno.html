@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular média do aluno</title>
+    <style>
+        body {
+        background-color: rgb(34, 43, 51);
+        text-align: center;
+        height: 200px;  
+        width: 90%;
+    }
+    h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 70px;
+    }
+    label {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 25px;
+        box-shadow: 5px;
+    }
+    p {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 30px;
+        box-shadow: 5px;
+    }
+    input {
+        font-size: 20px;
+        box-shadow: 5px;
+    }
+    </style>
+    <script language="JavaScript">
+        let nota1 = 0;
+        let nota2 = 0;
+        let nota3 = 0;
+        let media;
+
+        function calcular(){
+            nota1 = parseFloat(document.querySelector("#nota1").value);
+            nota2 = parseFloat(document.querySelector("#nota2").value);
+            nota3 = parseFloat(document.querySelector("#nota3").value);
+
+            calculo = (nota1+nota2+nota3)/3;
+            media = ("A média do aluno é: "+ calculo);
+            if (calculo < 7){
+                media += ("<br>O aluno foi reprovado!");
+            }
+            else if (calculo >= 7){
+                media += ("<br>O aluno foi aprovado!");
+            }
+
+            document.querySelector("#calculo").innerHTML = media;
+        }
+
+       
+
+    </script>
+</head>
+<body>
+    <h2>Média do aluno</h2>
+    <label>Primeira nota</label>
+    <input type="number" onchange="calcular()" id="nota1"><br>
+    <label>Segunda nota</label>
+    <input type="number" onchange="calcular()" id="nota2"><br>
+    <label>Terceira nota</label>
+    <input type="number" onchange="calcular()" id="nota3"><br>
+
+    <p id="calculo">...</p>
+</body>
+</html>

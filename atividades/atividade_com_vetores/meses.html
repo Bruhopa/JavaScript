@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meses do Ano</title>
+    <style>
+    body {
+        background-color: rgb(34, 43, 51);
+        text-align: center;
+        height: 200px;  
+        width: 90%;
+    }
+    h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 70px;
+    }
+    label {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 25px;
+        box-shadow: 5px;
+    }
+    ol {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 30px;
+        box-shadow: 5px;
+    }
+    input {
+        font-size: 20px;
+        box-shadow: 5px;
+    }
+
+    </style>
+    <script language="JavaScript">
+    let meses = [
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro"
+    ]
+</script>
+</head>
+<body>
+    <h2>Meses do ano</h2>
+    <br>
+    <ol>
+        <script>
+            for (mes of meses){
+                document.write("<li>"+mes+"</li>");
+            }
+        </script>
+    </ol>
+</body>
+</html>

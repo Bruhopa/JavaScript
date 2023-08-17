@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordem Crescente</title>
+    <style>
+        body {
+        background-color: rgb(34, 43, 51);
+        text-align: center;
+        height: 200px;  
+        width: 90%;
+    }
+    h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 70px;
+    }
+    label {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 25px;
+        box-shadow: 5px;
+    }
+    p {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 30px;
+        box-shadow: 5px;
+    }
+    input {
+        font-size: 20px;
+        box-shadow: 5px;
+    }
+    </style>
+    
+    <script language="JavaScript">
+    let n1 = 0;
+    let n2 = 0;
+    let n3 = 0;
+    let maior,meio,menor;
+    function icalcular(){
+        n1 = parseFloat(document.querySelector("#n1").value);
+        n2 = parseFloat(document.querySelector("#n2").value);
+        n3 = parseFloat(document.querySelector("#n3").value);
+
+        if (n1 > n2 && n1 > n3){
+            maior = n1
+            if(n2<n3){
+                menor=n2
+                meio=n3
+            }else {
+                menor=n3
+                meio=n2
+            }     
+        }else if(n1<n2 && n1<n3){
+            menor = n1
+            if(n2>n3){
+                maior=n2
+                meio=n3
+            }else {
+                maior=n3
+                meio=n2
+            } 
+        }else{
+            meio = n1
+            if(n2>n3){
+                maior=n2
+                menor=n3
+            }else {
+                maior=n3
+                menor=n2
+            } 
+        }
+
+        document.querySelector("#icalculo").innerHTML = ("A ordem é: "+ menor +", "+ meio +", "+ maior );
+    }
+
+
+    </script>
+</head>
+<body>
+    <h2>Ordem Crescente</h2>
+    <label>Informe o primeiro número</label>
+    <input type="number" onchange="calcular()" id="n1"><br>
+    <label>Informe o segundo número</label>
+    <input type="number" onchange="calcular()" id="n2"><br>
+    <label>Informe o terceiro número</label>
+    <input type="number" onchange="calcular()" id="n3"><br>
+
+    <p id="calculo">...</p>
+</body>
+</html>

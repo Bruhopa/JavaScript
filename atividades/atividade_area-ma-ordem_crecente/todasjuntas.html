@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+    <style>
+        body {
+        background-color: rgb(34, 43, 51);
+        text-align: center;
+        height: 200px;  
+        width: 90%;
+    }
+    h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 70px;
+    }
+    label {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 25px;
+        box-shadow: 5px;
+    }
+    p {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 30px;
+        box-shadow: 5px;
+    }
+    input {
+        font-size: 20px;
+        box-shadow: 5px;
+    }
+    </style>
+    <script language="JavaScript">
+
+        ///------- Calcula a área --------///
+         let base = 0;
+        let altura = 0;
+
+        function calcular(){
+            base = parseFloat(document.querySelector("#base").value);
+            altura = parseFloat(document.querySelector("#altura").value);
+
+            document.querySelector("#calculo").innerHTML = ("O tamanho da área é de: "+(base*altura));
+        }
+    </script>
+    <script language="JavaScript">
+        ///-------- Ordem Crescente ---------///
+        let n1 = 0;
+        let n2 = 0;
+        let n3 = 0;
+        let maior,meio,menor;
+
+        function icalcular(){
+        n1 = parseFloat(document.querySelector("#n1").value);
+        n2 = parseFloat(document.querySelector("#n2").value);
+        n3 = parseFloat(document.querySelector("#n3").value);
+
+        if (n1 > n2 && n1 > n3){
+            maior = n1
+            if(n2<n3){
+                menor=n2
+                meio=n3
+            }else {
+                menor=n3
+                meio=n2
+            }     
+        }else if(n1<n2 && n1<n3){
+            menor = n1
+            if(n2>n3){
+                maior=n2
+                meio=n3
+            }else {
+                maior=n3
+                meio=n2
+            } 
+        }else{
+            meio = n1
+            if(n2>n3){
+                maior=n2
+                menor=n3
+            }else {
+                maior=n3
+                menor=n2
+            } 
+        }
+
+        document.querySelector("#icalculo").innerHTML = ("A ordem é: "+ menor +", "+ meio +", "+ maior );
+        }
+    </script>
+    <script language="JavaScript">
+        ///---------- Calcula a média do aluno ----------///
+        let nota1 = 0;
+        let nota2 = 0;
+        let nota3 = 0;
+        let media;
+
+        function Rcalcular(){
+            nota1 = parseFloat(document.querySelector("#nota1").value);
+            nota2 = parseFloat(document.querySelector("#nota2").value);
+            nota3 = parseFloat(document.querySelector("#nota3").value);
+
+            calculo = (nota1+nota2+nota3)/3;
+            media = ("A média do aluno é: "+ calculo);
+            if (calculo < 7){
+                media += ("<br>O aluno foi reprovado!");
+            }
+            else if (calculo >= 7){
+                media += ("<br>O aluno foi aprovado!");
+            }
+
+            document.querySelector("#Rcalculo").innerHTML = media;
+        }
+    </script>
+</head>
+<body>
+    <h2>Calculadora de Área</h2>
+    <label>Base</label>
+    <input type="number" onchange="calcular()" id="base"><br>
+    <label>Altura</label>
+    <input type="number" onchange="calcular()" id="altura"><br>
+
+    <p id="calculo">...</p>
+
+    <h2>Ordem Crescente</h2>
+    <label>Informe o primeiro número</label>
+    <input type="number" onchange="icalcular()" id="n1"><br>
+    <label>Informe o segundo número</label>
+    <input type="number" onchange="icalcular()" id="n2"><br>
+    <label>Informe o terceiro número</label>
+    <input type="number" onchange="icalcular()" id="n3"><br>
+
+    <p id="icalculo">...</p>
+
+    <h2>Média do aluno</h2>
+    <label>Primeira nota</label>
+    <input type="number" onchange="Rcalcular()" id="nota1"><br>
+    <label>Segunda nota</label>
+    <input type="number" onchange="Rcalcular()" id="nota2"><br>
+    <label>Terceira nota</label>
+    <input type="number" onchange="Rcalcular()" id="nota3"><br>
+
+    <p id="Rcalculo">...</p>
+</body>
+</html>

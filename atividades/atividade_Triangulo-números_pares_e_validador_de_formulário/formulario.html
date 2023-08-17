@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+    body {
+        background-color: rgb(34, 43, 51);
+        text-align: center;
+        height: 200px;  
+        width: 90%;
+    }
+    h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 70px;
+    }
+    label {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 25px;
+        box-shadow: 5px;
+    }
+    button {
+            font-size: 20px;
+            box-shadow: 5px;
+    }
+    input {
+        font-size: 20px;
+        box-shadow: 5px;
+    }
+    </style>
+    <script language="JavaScript">
+        function validate(){
+        
+            const nome= document.getElementById('nome');
+            const idade = document.getElementById('idade');
+            const sexo = document.getElementById('sexo');
+            
+            if(!nome.value){
+                nome.style.border = '1px solid red';
+            }
+            if(!idade.value){
+                idade.style.border = '1px solid red';
+            }
+            if(!sexo.value){
+                    sexo.style.border = '1px solid red';
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h2>Formulário</h2>
+    <label for="nome">Informe seu nome:</label>
+    <input type="text" placeholder="Seu nome" id="nome">
+    <label for="idade">Informe sua idade:</label>
+    <input type="number" placeholder="Sua idade" id="idade">
+    <label for="sexo">Informe seu sexo:</label>
+    <input type="text" placeholder="Seu sexo" id="sexo">
+
+    <button onclick="validate()">Mostrar</button>
+</body>
+</html>

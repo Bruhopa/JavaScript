@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de vetores</title>
+</head>
+<body>
+    <script language="JavaScript">
+        let vazio = [];
+        let vazio2 = new Array();
+        document.write("vazio tipo: "+typeof(vazio));
+        document.write("<br>");
+        document.write(vazio.toString());
+        document.write("<br>");
+        document.write("vazio2 tipo: "+typeof(vazio2));
+        document.write(vazio2.toString());
+
+        let numerosPares = [2,4,6,8,10];
+        document.write("<br>");
+        document.write(numerosPares.toString());
+
+        let alunos = ["Sandro","Pedro","Maria","José"];
+        document.write("<br>");
+        document.write(alunos.toString());
+        document.write("<br>Mostrando segundo elemento dos vetores<br>");
+        document.write(numerosPares[1]);
+        document.write("<br>");
+        document.write(alunos[1]);
+        document.write("<br>");
+
+        let notas = new array(4);
+        document.write("<br>");
+        documen.write("Número de notas: "+notas.length);
+        document.write("<br>");
+        for (n = 0;n<4;n++){
+            notas[n] = window.prompt("Informe a nota "+n+":");
+        }
+        document.write("<br>");
+        document.write(notas.toString());
+        document.write("<br>");
+
+        let nome = "";
+        nome = window.prompt("Qual é o seu nome:");
+        for (letra in nome){
+            document.write(nome[letra]+"<br>");
+        }
+    </script>
+</body>
+</html>

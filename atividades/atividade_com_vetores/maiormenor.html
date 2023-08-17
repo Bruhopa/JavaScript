@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior e Menor</title>
+    <style>
+        body {
+        background-color: rgb(34, 43, 51);
+        text-align: center;
+        height: 200px;  
+        width: 90%;
+    }
+    h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 70px;
+    }
+    label {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 25px;
+        box-shadow: 5px;
+    }
+    p {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 30px;
+        box-shadow: 5px;
+    }
+    input {
+        font-size: 20px;
+        box-shadow: 5px;
+    }
+    button {
+            font-size: 20px;
+            box-shadow: 5px;
+    }
+    </style>
+    <script laguange="JavaScript">
+        let array = []
+
+        function input(){
+            const num = document.querySelector("#ni").value;
+            array.push(num);
+            console.log("array: "+array);
+        }
+        
+        function calcular(){
+            const min = Math.min(...array);
+            const max = Math.max(...array);
+            console.log(min); 
+            console.log(max);
+            document.querySelector("#Resultado").innerHTML = ("O maior número é: "+max+ " e o menor é: "+min);
+        }
+        
+    </script>
+</head>
+<body>
+    <h2>Maior e Menor</h2>
+    <label>Informe os números</label>
+    <input type="number" onchange="input()" id="ni">
+    <button onclick="calcular()">Calcular</button>
+    <p id="Resultado">Resultado</p>
+</body>
+</html>
