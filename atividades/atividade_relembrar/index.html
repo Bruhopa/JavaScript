@@ -11,7 +11,6 @@
     <br>
 
     <h1>Exercício 2</h1>
-    <label>Informe os números</label>
     <button onclick="calcular()">Calcular</button>
     
     <script language="JavaScript">
@@ -48,6 +47,18 @@
     </script>
 
         <h1>Exercício 4</h1>
-        
+        <input type="number" id="n1">
+        <button onclick="calcular()">Verificar</button>
+        <script language="JavaScript">
+            function calcular(){
+            let n1
+            if (n1 < 0){
+                document.write("O número "+n1+" é menor que 0");
+            }
+            else if(n1 >= 0 ){
+                document.write("O número "+n1+" é maior ou igual a 0");
+            }
+        }
+        </script>
 </body>
 </html>
