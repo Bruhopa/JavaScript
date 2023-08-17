@@ -4,6 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordenar alunos</title>
+    <style>
+    body {
+        background-color: rgb(34, 43, 51);
+        text-align: center;
+        height: 200px;  
+        width: 90%;
+    }
+    h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 70px;
+    }
+    textarea {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 25px;
+        box-shadow: 5px;
+    }
+    label {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 25px;
+        box-shadow: 5px;
+    }
+    div {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 25px;
+        box-shadow: 5px;
+    }
+    p {
+        font-family: Arial, Helvetica, sans-serif;
+        color:rgb(230, 230, 235);
+        font-size: 30px;
+        box-shadow: 5px;
+    }
+    input {
+        font-size: 20px;
+        box-shadow: 5px;
+    }
+    button {
+            font-size: 20px;
+            box-shadow: 5px;
+    }
+    </style>
     <script language="JavaScript">
 		function ordenarAlunos() {
 			var nomes = document.getElementById("nomes").value.split("\n");
@@ -26,7 +71,8 @@
 	</script>
 </head>
 <body>
-    <label for="nomes">Informe os nomes dos alunos:</label>
+    <h2>Ordenar Alunos</h2>
+    <label for="nomes">Informe os nomes dos alunos em letra minúscula:</label>
 	<textarea id="nomes"></textarea>
 	<button onclick="ordenarAlunos()">Ordenar</button>
 	<div id="resultado"></div>
