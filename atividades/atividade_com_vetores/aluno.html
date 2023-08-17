@@ -5,36 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordenar alunos</title>
     <script language="JavaScript">
-        function ordenar(){
-            const text = document.querySelector("#alunos").value;
-            let alunos = text.split(",");
+		function ordenarAlunos() {
+			var nomes = document.getElementById("nomes").value.split("\n");
+			nomes.sort();
 
-            alunos.sort();
+			var listaAlunos = document.createElement("ol");
+			for (var i = 0; i < nomes.length; i++) {
+				var itemAluno = document.createElement("li");
+				itemAluno.appendChild(document.createTextNode(nomes[i]));
+				listaAlunos.appendChild(itemAluno);
+			}
 
-            for(n=0;n<=alunos.length-1;n++){ 
-                alunos[n]="\n"+alunos[n];
-            }
+			var resultado = document.getElementById("resultado");
+			resultado.innerHTML = "";
+			resultado.appendChild(listaAlunos);
 
-            document.querySelector("#alunos").value = "Lista ordenada: "+alunos+"\n\nQuantidade de alunos: "+alunos.length;
-        }
-
-        function QuanAluno(){
-
-        var QuanAlunos = prompt("Digite a quantidade de alunos:");  
-        QuanAlunos = parseInt(QuanAlunos);
-
-        if (!isNaN(QuanAlunos)) {
-  
-        alert("A quantidade de alunos é: " + QuanAlunos);
-        } else {
-        alert("Por favor, digite um valor numérico válido.");
-        }
-        }
-    </script>
+			var quantidade = document.getElementById("quantidade");
+			quantidade.innerHTML = "Quantidade de alunos: " + nomes.length;
+		}
+	</script>
 </head>
 <body>
-    <h2>Ordenar Aluno</h2>
-    <label>Informe os alunos</label>
-    <input type="text" onchange="alunos" id="ordenar">
+    <label for="nomes">Informe os nomes dos alunos:</label>
+	<textarea id="nomes"></textarea>
+	<button onclick="ordenarAlunos()">Ordenar</button>
+	<div id="resultado"></div>
+	<div id="quantidade"></div>
 </body>
 </html>

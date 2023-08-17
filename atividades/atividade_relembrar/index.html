@@ -45,19 +45,40 @@
     });
     </script>
 
-        <h1>Exercício 4</h1>
-        <input type="number" id="n1">
-        <button onclick="calcular()">Verificar</button>
-        <script language="JavaScript">
-            function calcular(){
-            let n1
-            if (n1 < 0){
-                document.write("O número "+n1+" é menor que 0");
-            }
-            else if(n1 >= 0 ){
-                document.write("O número "+n1+" é maior ou igual a 0");
-            }
+    <h1>Exercício 4</h1>
+        <label for="valor">Informe um valor:</label>
+	    <input type="number" id="valor">
+	    <button onclick="verificarValor()">Verificar</button>
+    <script language="JavaScript">
+            function verificarValor(){
+            var valor = document.getElementById("valor").value;
+			if (valor == "") {
+				alert("Nenhum valor informado.");
+			} else if (valor < 0) {
+				alert("O valor é menor que zero.");
+			} else if (valor == 0) {
+				alert("O valor é igual a zero.");
+			} else {
+				alert("O valor é maior que zero.");
+			}
         }
-        </script>
+    </script>
+
+    <h1>Exercício 5</h1>
+        <label for="numero">Informe um número:</label>
+	    <input type="number" id="numero">
+	    <button onclick="verificarNumerosImpares()">Verificar</button>
+    <script language="JavaScript">
+        function verificarNumerosImpares() {
+			var numero = parseInt(document.getElementById("numero").value);
+			var numerosImpares = [];
+
+			for (var i = 1; i <= numero; i += 2) {
+				numerosImpares.push(i);
+			}
+
+			alert("Números ímpares entre 0 e " + numero + ":\n" + numerosImpares.join(", "));
+		}
+    </script>
 </body>
 </html>
