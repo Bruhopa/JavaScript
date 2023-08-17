@@ -80,5 +80,122 @@
 			alert("Números ímpares entre 0 e " + numero + ":\n" + numerosImpares.join(", "));
 		}
     </script>
+
+    <h1>Exercício 6</h1>
+    <label for="texto">Digite um texto:</label>
+	<textarea id="texto" oninput="contarCaracteres()"></textarea>
+	<br>
+	<label for="contador">Número de caracteres:</label>
+	<input type="text" id="contador" disabled>
+
+    <script language="JavaScript">
+		function contarCaracteres() {
+			var texto = document.getElementById("texto").value;
+			var contador = document.getElementById("contador");
+			contador.value = texto.length;
+		}
+	</script>
+
+    <h1>Exercício 7</h1>
+    <label for="cidade">Informe o nome de uma cidade:</label>
+	<input type="text" id="cidade">
+	<button onclick="adicionarCidade()">Adicionar</button>
+	<button onclick="listarCidades()">Listar</button>
+	<div id="resultado"></div>
+	<div id="quantidade"></div>
+
+    <script language="JavaScript">
+		var cidades = [];
+
+		function adicionarCidade() {
+			var cidade = document.getElementById("cidade").value;
+			cidades.push(cidade);
+			document.getElementById("cidade").value = "";
+		}
+
+		function listarCidades() {
+			cidades.sort();
+
+			var listaCidades = document.createElement("ol");
+			for (var i = 0; i < cidades.length; i++) {
+				var itemCidade = document.createElement("li");
+				itemCidade.appendChild(document.createTextNode(cidades[i]));
+				listaCidades.appendChild(itemCidade);
+			}
+
+			var resultado = document.getElementById("resultado");
+			resultado.innerHTML = "";
+			resultado.appendChild(listaCidades);
+
+			var quantidade = document.getElementById("quantidade");
+			quantidade.innerHTML = "Quantidade de cidades: " + cidades.length;
+		}
+	</script>
+
+    <h1>Exercício 8</h1>
+    <p id="paragrafo">Este é um parágrafo que pode ser escondido.</p>
+	<button onclick="esconderParagrafo()">Esconder</button>
+
+    <script language="JavaScript">
+		function esconderParagrafo() {
+			var paragrafo = document.getElementById("paragrafo");
+			if (paragrafo.style.display === "none") {
+				paragrafo.style.display = "block";
+			} else {
+				paragrafo.style.display = "none";
+			}
+		}
+    </script>
+
+    <h1>Exercício 9</h1>
+    <img id="imagem" src="https://i.pinimg.com/originals/e6/dd/7d/e6dd7dcb605aa52e65754c899ffbb1a4.jpg" onmouseover="trocarImagem()" onmouseout="restaurarImagem()">
+    <script language="JavaScript">
+		function trocarImagem() {
+			var imagem = document.getElementById("imagem");
+			imagem.src = "https://1.bp.blogspot.com/-lUKa4FNac1M/ThtfJcOwrQI/AAAAAAAACf0/Vg8_Bd8Kv2Q/s1600/lago-com-agua-cristalina-imagens-imagem-de-fundo-wallpaper-para-pc-computador-tela-gratis-ambiente-de-trabalho.jpg"
+		}
+
+		function restaurarImagem() {
+			var imagem = document.getElementById("imagem");
+			imagem.src = "https://i.pinimg.com/originals/e6/dd/7d/e6dd7dcb605aa52e65754c899ffbb1a4.jpg"
+		}
+	</script>
+
+    <h1>Exercício 10</h1>
+    <form id="formulario">
+		<label for="nome">Nome:</label>
+		<input type="text" id="nome" required>
+		<br>
+		<label for="telefone">Telefone:</label>
+		<input type="tel" id="telefone" required>
+		<br>
+		<label for="email">E-mail:</label>
+		<input type="email" id="email" required>
+		<br>
+		<label for="mensagem">Mensagem:</label>
+		<textarea id="mensagem" required></textarea>
+		<br>
+		<button type="button" onclick="enviarMensagem()">Enviar</button>
+	</form>
+	<div id="divMensagem"></div>
+
+    <script language="JavaScript">
+        function enviarMensagem() {
+			var nome = document.getElementById("nome").value;
+			var telefone = document.getElementById("telefone").value;
+			var email = document.getElementById("email").value;
+			var mensagem = document.getElementById("mensagem").value;
+
+			var data = new Date();
+			var dataFormatada = data.toLocaleString();
+
+			var conteudo = "Data: " + dataFormatada + "<br>";
+			conteudo += "Emissor: " + nome + ", " + telefone + ", " + email + "<br>";
+			conteudo += "Mensagem: " + mensagem;
+
+			var divMensagem = document.getElementById("divMensagem");
+			divMensagem.innerHTML = conteudo;
+		}
+    </script>
 </body>
 </html>
